@@ -1,0 +1,85 @@
+" Vim Help: https://vimhelp.org/
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+" Ref:
+" https://github.com/tpope/dotfiles/blob/c31d6515e126ce2e52dbb11a7b01f4ac4cc2bd0c/.vimrc#L33-L36
+if $VIMBARE
+  set noloadplugins
+  set viminfofile=NONE
+  set noswapfile nobackup
+  finish
+endif
+set clipboard=unnamedplus
+let mapleader = ' '
+nnoremap <Space> <Nop>
+xnoremap <Space> <Nop>
+
+inoremap jj <Esc>
+set timeoutlen=300
+
+inoremap kk <Esc>
+set timeoutlen=300
+
+inoremap jk <Esc>
+set timeoutlen=300
+
+if !has('packages') | echom 'Please install vim-plug instead' | finish | endif
+
+let $MYVIMDIR = $HOME . '/.vim'
+let $MYPACK = $MYVIMDIR . '/after/autoload/pack.vim'
+
+if empty($XDG_STATE_HOME)
+  let $XDG_STATE_HOME = $HOME . '/.local/state'
+endif
+
+command! PacClean source $MYPACK | call pack#init() | call minpac#clean()
+command! PacSync  source $MYPACK | call pack#init() | call minpac#update()
+command! PacMove  source $MYPACK | call pack#init() | call pack#move()
+
+command! PacList
+      \ if !exists('g:loaded_minpac') | packadd minpac | endif           |
+      \ echo 'Total: '
+      \ . len(minpac#getpackages('minpac', '', '', 1)) . ' plugin(s)'    |
+      \ echo join(sort(minpac#getpackages('minpac', '', '', 1)), "\n")
+
+" Usage: PacQ start or PacQ opt
+" Ref: https://dev.to/dlains/create-your-own-vim-commands-415b
+" command! -nargs=1 PacQ
+"       \ if !exists('g:loaded_minpac') | packadd minpac | endif |
+"       \ exe "echo 'Total:'"
+"       \ . "len(minpac#getpackages('minpac', '"
+"       \ . <f-args> . "', '', 1)) . ' plugin(s)'"               |
+"       \ exe "echo join(sort(minpac#getpackages('minpac', '"
+"       \ . <f-args> . "', '', 1)), " . '"\n")'
+
+command! PacInstall
+      \ source $MYPACK   |
+      \ call pack#init() |
+      \ call minpac#update(
+      \ keys(filter(copy(minpac#pluglist), {-> !isdirectory(v:val.dir . '/.git')}))
+      \ )
+hi Visual guifg=NONE guibg=#666666 guisp=NONE gui=reverse ctermfg=NONE ctermbg=59 cterm=reverse term=reverse
+hi VisualNOS guifg=NONE guibg=#000000 guisp=NONE gui=bold,underline ctermfg=NONE ctermbg=16 cterm=underline term=NONE
+hi Visual ctermfg=NONE ctermbg=darkgrey cterm=reverse
+hi VisualNOS ctermfg=NONE ctermbg=black cterm=underline
+hi Visual ctermfg=NONE ctermbg=NONE cterm=reverse
+hi VisualNOS ctermfg=NONE ctermbg=black cterm=underline
+if exists(':packadd') != 2 || $VIMNOPACK
+  finish
+endif
+
+if isdirectory(expand('~/.vim/pack'))
+  packadd! vim-surround
+  " packadd! targets.vim
+  " packadd! traces.vim
+  packadd! vim-sneak
+  packadd! cfilter
+
+  if expand('%') !~# '\v(psql.edit.*.sql|zsh\w*.zsh|bash-fc.\w*|COMMIT_EDITMSG)'
+    packadd! vim-dbml
+    " packadd! vim-bufstop
+    packadd! vim-commentary
+    packadd! vim-filebeagle
+    packadd! vim-projectionist
+  endif
+endif

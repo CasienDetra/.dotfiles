@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook/ui/html'
+let g:netrw_dirhist_7='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook/ui/html/partials'
+let g:netrw_dirhist_6='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook/ui'
+let g:netrw_dirhist_5='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook'
+let g:netrw_dirhist_4='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook/cmd'
+let g:netrw_dirhist_3='/home/casien/Dev/notes/enlightment/letgo_book/snippetbook/cmd/web'
+let g:netrw_dirhist_2='/home/casien/.vim/plugin'
+let g:netrw_dirhist_1='/home/casien/.vim'
+let g:netrw_dirhist_0='/home/casien/.vim/colors'
+let g:netrw_dirhist_9='/home/casien/.vim'

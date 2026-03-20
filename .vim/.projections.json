@@ -1,0 +1,35 @@
+{
+  "vimrc": {
+    "type": "vimrc"
+  },
+  "plugin/*.vim": {
+    "type": "plugin",
+    "alternate": [
+      "after/autoload/{}.vim",
+      "after/autoload/enable/{}.vim"
+    ]
+  },
+  "after/autoload/pack.vim": {
+    "type": "pack"
+  },
+  "after/autoload/*.vim": {
+    "type": "autoload",
+    "related": [
+      "plugin/{}.vim"
+    ]
+  },
+  "after/ftplugin/*.vim": {
+    "type": "ftplugin"
+  },
+  "colors/*.vim": {
+    "type": "color"
+  },
+  "pack/minpac/opt/**/plugin/*.vim": {
+    "type": "packplug",
+    "alternate": "{file|dirname|dirname}/autoload/{basename}.vim"
+  },
+  "pack/minpac/opt/**/autoload/*.vim": {
+    "type": "packautoload",
+    "alternate": "{file|dirname|dirname}/plugin/{basename}.vim"
+  }
+}
