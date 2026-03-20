@@ -1,0 +1,52 @@
+
+
+theme = "tokyonight_night"
+
+#shell
+shell-integration = fish
+
+#shader 
+custom-shader = shader/sweep_cursor.glsl
+# custom-shader = shader/cursor_frozen.glsl
+
+# Font
+font-family = Lilex
+font-size = 17
+
+# Window
+window-padding-x = 5
+window-padding-y = 5
+confirm-close-surface=false
+resize-overlay = never
+
+# Cursor styling
+cursor-style =block 
+cursor-style-blink = false
+cursor-color = cell-foreground
+cursor-text = cell-background
+
+# Background
+background-opacity = 1
+# background-blur = true
+background = #1a1b26 
+
+# Cursor styling + SSH session terminfo
+# (all shell integration options must be passed together)
+shell-integration-features = no-cursor
+
+# Window Decorations
+window-decoration = false
+adw-toolbar-style = raised
+gtk-wide-tabs = true
+
+# Keyboard bindings
+keybind = shift+insert=paste_from_clipboard
+keybind = control+insert=copy_to_clipboard
+keybind = super+control+shift+alt+arrow_down=resize_split:down,100
+keybind = super+control+shift+alt+arrow_up=resize_split:up,100
+keybind = super+control+shift+alt+arrow_left=resize_split:left,100
+keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+
+# Slowdown mouse scrolling
+mouse-scroll-multiplier = 0.95
+keybind = shift+enter=text:\x1b\r
