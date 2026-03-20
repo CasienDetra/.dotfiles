@@ -1,0 +1,59 @@
+{
+    // ui
+    "editor.fontFamily": "Lilex",
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 20,
+     // terminal
+    "terminal.integrated.fontSize":23,
+
+    // nvim keybind
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "d"],
+        "after": ["d", "d"]
+      },
+      {
+        "before": ["<C-n>"],
+        "commands": [":nohl"]
+      },
+    // {
+    //   "before": ["K"],
+    //   "commands": ["lineBreakInsert"],
+    //   "silent": true
+    // }
+      ],
+      "vim.leader": "<space>",
+      "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+      },
+      // To improve performance
+      "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+      "workbench.colorTheme": "Vitesse Black",
+      "workbench.iconTheme": "material-icon-theme",
+      "material-code.primaryColor": "#62667A",
+      "workbench.productIconTheme": "icons-carbon",
+      "dart.flutterSdkPath": "/home/casien/flutter",
+      "editor.autoIndentOnPaste": true,
+      "github.copilot.nextEditSuggestions.enabled": true,
+      "files.autoSave": "afterDelay",
+      "editor.inlineSuggest.edits.showCollapsed": true,
+      "breadcrumbs.filePath": "off",
+      "window.restoreWindows": "none",
+      "zenMode.restore": false,
+      "files.trimTrailingWhitespace": true
+    }
