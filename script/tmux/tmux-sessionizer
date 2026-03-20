@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# by Andrey A. Ugolnik
+# https://github.com/reybits
+
+# getting tmux pid
+tmux_pid=$(pgrep tmux)
+
+if [[ $# -eq 1 ]]; then
+    path=$1
+else
+    my_find() {
+        if [[ -n $TMUX ]] || [[ -n $tmux_pid ]]; then
+            CURRENT_SESSION=$(tmux display-message -p '#S')
+            SESSIONS_LIST=($(tmux list-sessions -F "#{session_name}" 2>/dev/null))
+            for session in "${SESSIONS_LIST[@]}"; do
+                if [[ $session != "$CURRENT_SESSION" ]]; then
+                    SESSIONS="$SESSIONS\033[1;34m* $session\033[0m\n"
+                fi
+            done
+            echo -e "$SESSIONS"
+        fi
+
+        if [[ -z $SESSION_PATHS ]]; then
+            echo -e "\033[31m! Env SESSION_PATHS is not set.\033[0m"
+        else
+            IFS=':' read -r -a PATHS_LIST <<<"$SESSION_PATHS"
+            for path in "${PATHS_LIST[@]}"; do
+                find "$path" -mindepth 1 -maxdepth 1 -type d -not -path "$path/.git" 2>/dev/null
+            done
+        fi
+    }
+
+    path=$(
+        my_find |
+            fzf \
+                --tmux 90%,60% \
+                --ansi \
+                --no-sort \
+                --preview 'tmux-fzf-preview {}'
+    )
+fi
+
+# nothing selected
+if [[ -z $path ]]; then
+    exit 0
+fi
+
+# remove leading leading '* ' from session name
+if [[ $path == \** ]]; then
+    path=${path:2}
+fi
+
+# format session name
+selected_name=$(basename "$path" | tr -s ".[:blank:]" "-" | tr "[:upper:]" "[:lower:]")
+
+# create new session if tmux is not running or if session not exists
+if [[ -z $TMUX && -z $tmux_pid ]] || ! tmux has-session -t $selected_name 2>/dev/null; then
+    tmux new-session -ds "$selected_name" -c "$path"
+fi
+
+if [[ -z $TMUX ]]; then
+    # attach to session outside tmux
+    tmux attach-session -t $selected_name
+else
+    # switch to session
+    tmux switch-client -t $selected_name
+fi
