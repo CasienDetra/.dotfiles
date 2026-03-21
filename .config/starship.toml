@@ -135,7 +135,7 @@ truncation_symbol = "./"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-"Dev" = "󰲋 "
+# "Dev" = "󰲋 "
 "Others" = " "
 # "caswork" = "  "
 [os]
