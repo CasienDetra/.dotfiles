@@ -1,7 +1,7 @@
 
 #tokyo-night theme
 [colors.primary]
-background = "#1e1e2e"
+background = "#100e0e"
 foreground = "#cdd6f4"
 dim_foreground = "#7f849c"
 bright_foreground = "#cdd6f4"
@@ -77,8 +77,8 @@ italic.family = "Lilex"
 size = 16
 
 [window]
-opacity = 1
-# opacity = 0.9
+# opacity = 1
+opacity = 0.9
 blur = true
 padding.x = 2
 padding.y = 2

@@ -1,26 +1,22 @@
 # Font
-# font_family      Iosevka Term
-font_family      DejaVuSansM Nerd Font
-# font_family      PlemolJP Console NF
-# font_family     Fantasque Sans Mono
-font_size 20.0
+font_family      Lilex
+font_size 17.0
 
 # Cursor
 cursor_shape block
-cursor_trail 1
+cursor_trail 10
 cursor_trail_start_threshold 0
 cursor_trail_decay 0.01 0.05
-# cursor_shape_unfocused hollow 
 
 # Padding (why weird value? consistency with foot)
-window_margin_width 0
-window_margin_width 11.75
+# window_margin_width 0
+window_margin_width 0.75
 
 # No stupid close confirmation
 confirm_os_window_close 0
 
-#Aesthetics
-background_blur 10
+# Aesthetics
+# background_blur 10
 background_opacity 0.9
 
 shell_integration no-cursor
@@ -68,19 +64,11 @@ tab_bar_margin_height 6 0
 #
 # tab_title_template "{index}"
  
-tab_separator "|"
-tab_bar_style separator
 tab_title_max_length 0
 tab_powerline_style slanted
 tab_title_template " {f'{title[:4]}' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}"
 
-# active_tab_font_style   bold
-# inactive_tab_font_style bold
-# active_tab_foreground   #6c6c6c
-# active_tab_background   #000000
-# inactive_tab_foreground #303030
-# inactive_tab_background #000000
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# Solarized Dark
 include current-theme.conf
 # END_KITTY_THEME

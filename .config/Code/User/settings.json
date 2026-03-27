@@ -45,7 +45,7 @@
     },
       "workbench.colorTheme": "Vitesse Black",
       "workbench.iconTheme": "material-icon-theme",
-      "material-code.primaryColor": "#62667A",
+      "material-code.primaryColor": "#514E60",
       "workbench.productIconTheme": "icons-carbon",
       "dart.flutterSdkPath": "/home/casien/flutter",
       "editor.autoIndentOnPaste": true,

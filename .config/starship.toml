@@ -1,7 +1,7 @@
 command_timeout = 500
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = false 
-scan_timeout = 10
+# scan_timeout = 10
 format = """
 $os 
 $directory\
