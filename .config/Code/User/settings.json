@@ -43,9 +43,8 @@
       "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
-      "workbench.colorTheme": "Vitesse Black",
       "workbench.iconTheme": "material-icon-theme",
-      "material-code.primaryColor": "#514E60",
+      "material-code.primaryColor": "#747A94",
       "workbench.productIconTheme": "icons-carbon",
       "dart.flutterSdkPath": "/home/casien/flutter",
       "editor.autoIndentOnPaste": true,
