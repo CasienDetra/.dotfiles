@@ -44,7 +44,7 @@
         "vscodevim.vim": 1
     },
       "workbench.iconTheme": "material-icon-theme",
-      "material-code.primaryColor": "#747A94",
+      "material-code.primaryColor": "#B33521",
       "workbench.productIconTheme": "icons-carbon",
       "dart.flutterSdkPath": "/home/casien/flutter",
       "editor.autoIndentOnPaste": true,

@@ -11,7 +11,7 @@ custom-shader = shader/sweep_cursor.glsl
 
 # Font
 font-family = Lilex
-font-size = 17
+font-size = 16
 
 # Window
 window-padding-x = 5
@@ -28,7 +28,9 @@ cursor-text = cell-background
 # Background
 background-opacity = 0.9
 # background-blur = true
-background = #1a1b26 
+# background = #1a1b26 
+background = #181818
+ 
 
 # Cursor styling + SSH session terminfo
 # (all shell integration options must be passed together)
