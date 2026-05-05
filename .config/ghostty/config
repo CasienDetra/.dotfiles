@@ -6,12 +6,12 @@ theme = "tokyonight_night"
 shell-integration = fish
 
 #shader 
-custom-shader = shader/sweep_cursor.glsl
+custom-shader = shader/warp_cursor.glsl
 # custom-shader = shader/cursor_frozen.glsl
 
 # Font
-font-family = Lilex
-font-size = 16
+font-family = DejaVuSansM Nerd Font
+font-size = 17
 
 # Window
 window-padding-x = 5
@@ -27,9 +27,9 @@ cursor-text = cell-background
 
 # Background
 background-opacity = 0.9
-# background-blur = true
+background-blur = true
 # background = #1a1b26 
-background = #181818
+background = #100e0e
  
 
 # Cursor styling + SSH session terminfo
