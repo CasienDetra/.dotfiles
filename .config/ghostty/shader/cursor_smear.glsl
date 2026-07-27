@@ -3,6 +3,7 @@ float getSdfRectangle(in vec2 p, in vec2 xy, in vec2 b)
     vec2 d = abs(p - xy) - b;
     return length(max(d, 0.0)) + min(max(d.x, d.y), 0.0);
 }
+float TRAIL_LENGTH = 0.2;
 
 // Based on Inigo Quilez's 2D distance functions article: https://iquilezles.org/articles/distfunctions2d/
 // Potencially optimized by eliminating conditionals and loops to enhance performance and reduce branching
@@ -65,7 +66,7 @@ vec4 saturate(vec4 color, float factor) {
 }
 
 const float OPACITY = 0.6;
-const float DURATION = 0.01; //IN SECONDS
+const float DURATION = 0.05; //IN SECONDS
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
@@ -110,5 +111,5 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     newColor = mix(newColor, trail, antialising(sdfCurrentCursor));
     newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));
     // newColor = mix(fragColor, newColor, OPACITY);
-    fragColor = mix(fragColor, newColor, step(sdfCurrentCursor, easedProgress * lineLength));
+    fragColor = mix(fragColor, newColor, step(sdfCurrentCursor, easedProgress * lineLength * TRAIL_LENGTH));
 }

@@ -6,11 +6,11 @@ theme = "tokyonight_night"
 shell-integration = fish
 
 #shader 
-custom-shader = shader/warp_cursor.glsl
+custom-shader = shader/cursor_smear.glsl
 # custom-shader = shader/cursor_frozen.glsl
 
 # Font
-font-family = DejaVuSansM Nerd Font
+font-family = Lilex
 font-size = 17
 
 # Window

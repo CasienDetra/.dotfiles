@@ -6,26 +6,47 @@ customCommands:
     loadingText: "opening commitizen commit tool"
     output: terminal
 
-theme:
-  activeBorderColor:
-    - '#b4befe'
-    - bold
-  inactiveBorderColor:
-    - '#a6adc8'
-  optionsTextColor:
-    - '#89b4fa'
-  selectedLineBgColor:
-    - '#313244'
-  cherryPickedCommitBgColor:
-    - '#45475a'
-  cherryPickedCommitFgColor:
-    - '#b4befe'
-  unstagedChangesColor:
-    - '#f38ba8'
-  defaultFgColor:
-    - '#cdd6f4'
-  searchingActiveBorderColor:
-    - '#f9e2af'
+gui:
+  theme:
+    activeBorderColor:
+      - "#fabd2f" # Gruvbox Yellow
+      - bold
+
+    inactiveBorderColor:
+      - "#665c54" # Gray
+
+    searchingActiveBorderColor:
+      - "#8ec07c" # Aqua
+      - bold
+
+    optionsTextColor:
+      - "#8ec07c" # Aqua
+
+    selectedLineBgColor:
+      - "#3c3836" # Dark Gray
+
+    inactiveViewSelectedLineBgColor:
+      - "#282828" # Background
+
+    cherryPickedCommitBgColor:
+      - "#b8bb26" # Green
+    cherryPickedCommitFgColor:
+      - "#282828"
+
+    markedBaseCommitBgColor:
+      - "#fabd2f" # Yellow
+    markedBaseCommitFgColor:
+      - "#282828"
+
+    unstagedChangesColor:
+      - "#fb4934" # Bright Red
+
+    defaultFgColor:
+      - "#ebdbb2" # Foreground
 
 authorColors:
-  '*': '#b4befe'
+  "*": "#83a598" # Blue
+
+branchColors:
+  main: "#b8bb26"    # Green
+  master: "#b8bb26"  # Green
